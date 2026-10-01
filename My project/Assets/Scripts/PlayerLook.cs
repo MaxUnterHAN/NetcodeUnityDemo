@@ -10,7 +10,6 @@ public class PlayerLook : NetworkBehaviour
     private Vector2 lookInput;
     private float xRotation = 0f;
 
-    // Synchroniseer de X-rotatie (omhoog/omlaag kijken) naar andere spelers
     private NetworkVariable<float> netXRotation = new NetworkVariable<float>(
         0f, 
         NetworkVariableReadPermission.Everyone, 
@@ -19,7 +18,6 @@ public class PlayerLook : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        // Optioneel: verberg de muis als je de eigenaar bent
         if (IsOwner)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -40,7 +38,7 @@ public class PlayerLook : NetworkBehaviour
             float mouseX = lookInput.x * sensitivity;
             float mouseY = lookInput.y * sensitivity;
 
-            // Links/rechts draaien op de speler root
+            // Links/rechts draaien
             transform.Rotate(Vector3.up * mouseX);
 
             // Boven/beneden draaien
@@ -54,10 +52,12 @@ public class PlayerLook : NetworkBehaviour
             {
                 cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             }
+
+            // BELANGRIJK: Reset de input zodat hij niet blijft doordraaien
+            lookInput = Vector2.zero;
         }
         else
         {
-            // Pas de gesynchroniseerde kijkhoek toe op andere spelers
             if (cameraTransform != null)
             {
                 cameraTransform.localRotation = Quaternion.Euler(netXRotation.Value, 0f, 0f);
