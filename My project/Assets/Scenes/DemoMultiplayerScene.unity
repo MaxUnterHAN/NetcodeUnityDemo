@@ -590,7 +590,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee589bb0084947439345bc8cbffba3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkRelayManager
-  joinCodeInput: GMFLQC
+  joinCodeInputField: {fileID: 0}
+  displayJoinCodeText: {fileID: 0}
+  mainMenuPanel: {fileID: 0}
   generatedJoinCode: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

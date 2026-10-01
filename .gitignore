@@ -76,3 +76,10 @@ unity_game_loop/output.svg
 
 # DrawIO backup files
 .$*
+
+# ParrelSync Clones
+*_clone/
+*_clone_0/
+*_clone_1/
+*_clone_2/
+*_clone_3/
