@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class PlayerNetworkSetup : NetworkBehaviour
 {
-    [SerializeField] private GameObject cameraHolder; // Of de Camera direct
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private AudioListener audioListener;
 
     public override void OnNetworkSpawn()
     {
-        // Is dit het karakter van de speler op DEZE computer?
         if (IsOwner)
         {
-            // Zet de camera AAN voor jezelf
-            if (cameraHolder != null) cameraHolder.SetActive(true);
+            // Eigen speler: camera en listener aan
+            if (playerCamera != null) playerCamera.enabled = true;
+            if (audioListener != null) audioListener.enabled = true;
         }
         else
         {
-            // Zet de camera UIT voor andere spelers op het netwerk
-            if (cameraHolder != null) cameraHolder.SetActive(false);
+            // Andere speler: zet ALLEEN het camera-renderelement uit, 
+            // het GameObject blijft actief zodat de Gun zichtbaar blijft!
+            if (playerCamera != null) playerCamera.enabled = false;
+            if (audioListener != null) audioListener.enabled = false;
         }
     }
 }

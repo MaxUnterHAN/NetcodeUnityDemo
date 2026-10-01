@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4935942270163178518
 Transform:
   m_ObjectHideFlags: 0
@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00812bba2ef689b4bbd9145993bf5164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ShowTopMostFoldoutHeaderGroup: 1
   sensitivity: 0.1
   cameraTransform: {fileID: 4935942270163178518}
 --- !u!114 &2007988045986376410
@@ -457,7 +458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  cameraHolder: {fileID: 801710745658179343}
+  playerCamera: {fileID: 5097739943148874087}
+  audioListener: {fileID: 0}
 --- !u!114 &5949466634649815043
 MonoBehaviour:
   m_ObjectHideFlags: 0
