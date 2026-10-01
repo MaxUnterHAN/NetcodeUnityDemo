@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4935942270163178518
 Transform:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801710745658179343}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 7810885849941726695}
   - component: {fileID: 4100028285110748890}
   - component: {fileID: 2007988045986376410}
+  - component: {fileID: 5949466634649815043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -411,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4857e0c91bbff8f4c98d8fb602b538b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  ShowTopMostFoldoutHeaderGroup: 1
   speed: 5
   jumpForce: 5
 --- !u!114 &7810885849941726695
@@ -456,6 +458,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
   cameraHolder: {fileID: 801710745658179343}
+--- !u!114 &5949466634649815043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971647032608833572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.NetworkRigidbody
+  ShowTopMostFoldoutHeaderGroup: 1
+  NetworkRigidbodyBaseExpanded: 0
+  UseRigidBodyForMotion: 0
+  AutoUpdateKinematicState: 1
+  AutoSetKinematicOnDespawn: 1
 --- !u!1 &6338725613241235509
 GameObject:
   m_ObjectHideFlags: 0
